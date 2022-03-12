@@ -1,11 +1,22 @@
-<h1>Places</h1>
+<div class="row">
+  
+<% if @current_user %>
 
-<ul>
   <% for place in @places %>
-    <li><a href="/places/<%= place.id %>"><%= place.name %></a></li>
-  <% end %>
-</ul>
+    <div class="col-md-3 col-sm-6">
+    <li>
+      <a href="/places/<%= place.id %>"><%= place.name %></a>
+    </li>
+      </h4>
 
-<p>
-  <a href="/places/new">New place</a>
-</p>
+    </div>
+  <% end %>
+
+<div class="col-sm-3 text-end">
+          <a href="/places/new/" class="btn btn-success">New Place</a>
+        <% else %>
+        Login or Sign up to see and share the place's you've been!
+        <% end %>
+      </div>
+
+</div>
