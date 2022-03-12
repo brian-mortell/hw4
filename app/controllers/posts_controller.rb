@@ -9,7 +9,7 @@ class PostsController < ApplicationController
     @post = Post.new(params["post"])
     @post.user_id = @current_user.id
     @post.save
-    redirect_to "/places"
+    redirect_to "/places/#{@post.place_id}"
   end
 
 end
